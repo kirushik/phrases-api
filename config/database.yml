@@ -1,0 +1,6 @@
+adapter: em_postgresql
+encoding: unicode
+database: phrases_proto
+pool: 5
+username: kirushik
+password: 
