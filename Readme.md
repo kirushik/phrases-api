@@ -15,7 +15,8 @@ It is a simple webserver for a Babbel Ruby challenge. It stores phrases in a DB 
 
  - GET `/v1/phrases` to recieve current phrases count
  - POST `/v1/phrases?value=…` to add new phrase
- - GET `v1/phrases/random` to retrieve a random phrase
+ - GET `/v1/phrases/random` to retrieve a random phrase
+ - POST `/v1/phrases/bulk_upload` with `file` file upload parameter to add phrases in bulk
 
 All endpoints return JSON object and use valid HTTP return codes.
 All endpoint validate JWT token in the `Authorization:` header to grant access. (Default secret is `"chanegeme"`, which user should certaionly change in `./server.rb`)
