@@ -1,0 +1,14 @@
+upstream foreman {
+  server localhost:5000;
+  server localhost:5001;
+  server localhost:5002;
+  server localhost:5003;
+}
+
+server {
+  listen 4000;
+
+  location / {
+    proxy_pass http://foreman;
+  }
+}
