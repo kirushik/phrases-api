@@ -8,3 +8,5 @@ gem 'jwt'
 
 gem 'em-synchrony'
 gem 'em-postgresql-adapter', :git => 'git://github.com/leftbee/em-postgresql-adapter.git'
+
+gem 'sidekiq'
