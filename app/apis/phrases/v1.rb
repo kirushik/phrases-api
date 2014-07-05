@@ -1,4 +1,5 @@
 require_relative '../../models/phrase'
+require_relative '../../jobs/phrase_parser'
 
 module Phrases
   class V1 < Grape::API
@@ -33,6 +34,8 @@ module Phrases
         filename = "#{Dir.pwd}/uploads/#{Time.now.to_i}_#{params[:file][:filename]}"
         FileUtils.copy(params[:file][:tempfile].path, filename) # To ensure all permissions are OK
         params[:file][:tempfile].unlink
+
+        PhraseParser.perform_async(filename)
 
         :ok
       end
