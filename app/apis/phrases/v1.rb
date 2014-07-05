@@ -5,8 +5,14 @@ module Phrases
     version 'v1', :using => :path
     format :json
 
-    get '/' do
-      Phrase.count
+    namespace 'phrases' do
+      get '/' do
+        Phrase.count
+      end
+
+      get 'random' do
+        Phrase.random
+      end
     end
   end
 end
