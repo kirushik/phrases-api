@@ -10,10 +10,6 @@ module Phrases
         Phrase.count
       end
 
-      get 'random' do
-        Phrase.random
-      end
-
       params do
         requires :value, type: String
       end
@@ -24,6 +20,21 @@ module Phrases
         rescue ActiveRecord::RecordNotUnique
           error! 'This phrase is already in the database', 409
         end
+      end
+
+      get 'random' do
+        Phrase.random
+      end
+
+      params do
+        requires :file
+      end
+      post 'bulk_upload' do
+        filename = "#{Dir.pwd}/uploads/#{Time.now.to_i}_#{params[:file][:filename]}"
+        FileUtils.copy(params[:file][:tempfile].path, filename) # To ensure all permissions are OK
+        params[:file][:tempfile].unlink
+
+        :ok
       end
     end
   end
