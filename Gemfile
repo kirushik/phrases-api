@@ -3,3 +3,5 @@ ruby '2.1.2'
 
 gem 'goliath'
 gem 'grape'
+
+gem 'jwt'
