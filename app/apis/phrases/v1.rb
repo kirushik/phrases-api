@@ -13,6 +13,14 @@ module Phrases
       get 'random' do
         Phrase.random
       end
+
+      params do
+        requires :value, type: String
+      end
+      post '/' do
+        phrase = Phrase.create(value: params[:value])
+        [201, {}, phrase]
+      end
     end
   end
 end
