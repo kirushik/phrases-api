@@ -1,6 +1,22 @@
+GIT
+  remote: git://github.com/leftbee/em-postgresql-adapter.git
+  revision: 3dfcc60378e961fca48dd4dcdc930a368a5d052d
+  specs:
+    em-postgresql-adapter (0.3)
+      activerecord (>= 3.1.0)
+      eventmachine
+      pg (>= 0.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (4.1.4)
+      activesupport (= 4.1.4)
+      builder (~> 3.1)
+    activerecord (4.1.4)
+      activemodel (= 4.1.4)
+      activesupport (= 4.1.4)
+      arel (~> 5.0.0)
     activesupport (4.1.4)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -8,6 +24,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    arel (5.0.1.20140414130214)
     async-rack (0.5.1)
       rack (~> 1.1)
     axiom-types (0.1.1)
@@ -57,6 +74,7 @@ GEM
     minitest (5.3.5)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    pg (0.17.1)
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -80,6 +98,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  em-postgresql-adapter!
+  em-synchrony
   goliath
   grape
   jwt
