@@ -17,5 +17,7 @@ class PhraseParser
         puts "Phrase #{line} is already there"
       end
     end
+
+    FileUtils.rm filename
   end
 end
